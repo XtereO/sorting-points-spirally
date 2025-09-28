@@ -1,4 +1,5 @@
 from typing import List
+from copy import deepcopy
 import matplotlib.pyplot as plt
 
 
@@ -15,9 +16,12 @@ def sort_points_spirally(points: List[List[float]], showing_result=False) -> Lis
     if (len(points) == 0):
         return []
 
+    d_points = deepcopy(points)
     pivot_point = points.index(min(points, key=lambda p: (p[0], p[1], p[2])))
 
     res = [pivot_point]
+
+
 
     if (showing_result):
         x_ordered = list(map(lambda i: points[i][0], res))
