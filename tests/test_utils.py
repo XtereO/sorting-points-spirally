@@ -28,6 +28,17 @@ class TestPoppingByValue:
         i = pop_by_value(l, 3)
         assert l != d_l
         assert l == [1, 2]
+
+    def test_list_items(self):
+        i = pop_by_value([[1, 2], [3, 4], [2, 3]], [3, 4])
+        assert i == 1
+    
+    def test_list_items_mutation(self):
+        l = [[1, 2], [7, 4], [2, 3]]
+        d_l = deepcopy(l)
+        i = pop_by_value(l, [7, 4])
+        assert l != d_l
+        assert l == [[1, 2], [2, 3]]
     
     def test_case_one(self):
         i = pop_by_value([32, 51, 20, 73, 24, 12], 73)
