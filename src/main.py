@@ -41,17 +41,26 @@ def sort_points_spirally(points: List[List[float]], showing_result=False) -> Lis
 
         shifted_pivot_x = pivot_x - x_mean
         shifted_pivot_y = pivot_y - y_mean
+
+        #it is realization with rotation and atan; make another one with scalar product and detecting sign + use max angle as another function 
         unsigned_alpha = 0 if shifted_pivot_x == 0 else acos(
             (-shifted_pivot_x) / ((shifted_pivot_x**2 + shifted_pivot_y**2)**0.5))
         alpha = -unsigned_alpha if (shifted_pivot_y < 0) else unsigned_alpha
         s = sin(alpha)
         c = cos(alpha)
 
-        angles = sorted([{"angle": (atan2(c*(p[0]-pivot_x) + s*(pivot_y-p[1]), c*(p[1]-pivot_y)+s*(p[0]-pivot_x))), "index": i}
-                        for i, p in (indexed_points)], key=lambda a: (round(a["angle"], 4), (points[a["index"]][0]*s + points[a["index"]][1]*c), (points[a["index"]][0]*c - points[a["index"]][1]*s), points[angles["index"]][2]),
+        angles = sorted([{"angle": round(atan2(c*(p[0]-pivot_x) + s*(pivot_y-p[1]), c*(p[1]-pivot_y)+s*(p[0]-pivot_x)), 4), "index": i}
+                        for i, p in (indexed_points)], key=lambda a: (a["angle"], (points[a["index"]][0]*s + points[a["index"]][1]*c), (points[a["index"]][0]*c - points[a["index"]][1]*s), points[a["index"]][2]),
                         reverse=False)
+        print(f"{res[-1]}, {alpha}, {angles}" if (pivot_x==0 and pivot_y==-2) else "")
 
+        
         next_pivot_point_index = angles[0]["index"]
+        for a in angles:
+            next_pivot_point_index = a["index"]
+            if a["angle"] >= -1.5708:
+                break 
+
         pop_by_value(indexed_points, (next_pivot_point_index,
                      points[next_pivot_point_index]))
         res.append(next_pivot_point_index)
