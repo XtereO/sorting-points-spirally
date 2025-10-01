@@ -1,6 +1,28 @@
 from copy import deepcopy
-from utils import pop_by_value
+from utils import get_boundaries_indexed_points, pop_by_value
 
+class TestGettingBoundariesIndexedPoints:
+    def test_empty_list(self):
+        boundaries = get_boundaries_indexed_points([])
+        assert boundaries == (0, 0, 0, 0)
+    
+    def test_one_point(self):
+        boundaries = get_boundaries_indexed_points([(0, [1, 4, 2])])    
+        assert boundaries == (0, 0, 0, 0)
+    
+    def test_two_points(self):
+        boundaries = get_boundaries_indexed_points([(0, [1, 4, 2]), (1, [2, 7, 5])])
+        x_min = 1
+        x_max = 2
+        y_min = 4
+        y_max = 7
+        assert boundaries == (x_min, x_max, y_min, y_max)
+        
+    def test_immutable_points(self):
+        points = [(0, [1, 2, 3]), (1, [4, 2, 7])]
+        d_points = deepcopy(points)
+        boundaries = get_boundaries_indexed_points(points)
+        assert points == d_points
 
 class TestPoppingByValue:
     def test_empty_list(self):

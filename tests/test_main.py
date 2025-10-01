@@ -87,7 +87,7 @@ class TestSortingSpirallyAlgorithm:
             [-1, -1, 0], [-1, 0, 0], [-1, 1, 0], [0, 1, 0], [1, 1, 0], [1, 0, 0], [1, -1, 0], [0, -1, 0], [0, 0, 0])
 
         points_order = sort_points_spirally([p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10,
-                                            p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24], True)
+                                            p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24])
         assert len(points_order) == 25
         assert points_order == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
                                 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
@@ -137,7 +137,7 @@ class TestSortingSpirallyAlgorithm:
             0, 1.2, 0], [1, 0.8, 0], [1.5, 0, 0], [1, -1, 0], [0, -0.7, 0], [0, 0, 0], [0.1, 0, 0]]
         p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10 = tuple(points)
         points_order = sort_points_spirally(
-            [p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10])
+            [p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10], True)
         assert points_order == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
         points_order = sort_points_spirally(
@@ -217,3 +217,5 @@ class TestSortingSpirallyAlgorithm:
         points_order = sort_points_spirally(points)
         assert points_order == [0, 1, 5, 6, 10, 13, 14, 19, 16, 3, 2, 4, 7, 9,
                                 11, 12, 15, 18, 17, 20, 21, 8, 27, 31, 28, 23, 22, 25, 26, 30, 29, 24]
+
+# TODO: test with rope that ends in one part (left-left)
