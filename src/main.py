@@ -1,7 +1,7 @@
 from typing import List
 import matplotlib.pyplot as plt
 
-from methods import pick_next_point
+from picking_methods import pick_next_point
 from utils import get_boundaries_indexed_points, pop_by_value
 
 
