@@ -137,7 +137,7 @@ class TestSortingSpirallyAlgorithm:
             0, 1.2, 0], [1, 0.8, 0], [1.5, 0, 0], [1, -1, 0], [0, -0.7, 0], [0, 0, 0], [0.1, 0, 0]]
         p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10 = tuple(points)
         points_order = sort_points_spirally(
-            [p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10], True)
+            [p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10])
         assert points_order == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
         points_order = sort_points_spirally(
@@ -218,4 +218,11 @@ class TestSortingSpirallyAlgorithm:
         assert points_order == [0, 1, 5, 6, 10, 13, 14, 19, 16, 3, 2, 4, 7, 9,
                                 11, 12, 15, 18, 17, 20, 21, 8, 27, 31, 28, 23, 22, 25, 26, 30, 29, 24]
 
-# TODO: test with rope that ends in one part (left-left)
+    def test_case_ten_spiral_in_one_are(self):
+        p0, p1, p2, p3, p4, p5, p6 = ([-5, 0, 3], [-3, 4, 3], [2, 3, 0],
+                                      [3, -3, 0], [-2, 0, 0], [-2, 1, 0], [-1, 1, 0])
+        points_order = sort_points_spirally([p0, p1, p2, p3, p4, p5, p6])
+        assert points_order == [0, 1, 2, 3, 4, 5, 6]
+
+        points_order = sort_points_spirally([p5, p2, p4, p1, p6, p0, p3])
+        assert points_order == [5, 3, 1, 6, 2, 0, 4]
