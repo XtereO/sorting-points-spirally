@@ -26,7 +26,18 @@ After that we use the picked point as a new pivot point and repeat steps 1, 2, 3
 documentation in process...
 
 ## Covered tests
-documentation in process...
+| № | Test title | Input | Output |
+|---|----|-----|-----------|
+| 1 | Simple square | ![alt text](doc_imgs/test_input_simple_square.png) | ![alt text](doc_imgs/test_output_simple_square.png) |
+| 2 | Simple curve | ![alt text](doc_imgs/test_input_simple_curve.png) | ![alt text](doc_imgs/test_output_simple_curve.png) |
+| 3 | Curve | ![alt text](doc_imgs/test_input_curve.png) | ![alt text](doc_imgs/test_output_curve.png) |
+| 4 | Square | ![alt text](doc_imgs/test_input_square.png) | ![alt text](doc_imgs/test_output_square.png) |
+| 5 | Horizontal line | ![alt text](doc_imgs/test_input_horizontal_line.png) | ![alt text](doc_imgs/test_output_horizontal_line.png) |
+| 6 | Vertical line | ![alt text](doc_imgs/test_input_vertical_line.png) | ![alt text](doc_imgs/test_output_vertical_line.png) |
+| 7 | Shifted points | ![alt text](doc_imgs/test_input_shifted_points.png) | ![alt text](doc_imgs/test_output_shifted_points.png) |
+| 8 | Similar points on flat xy | ![alt text](doc_imgs/test_input_similar_points_xy.png) | ![alt text](doc_imgs/test_output_similar_points_xy.png) |
+| 9 | Four-grouped points | ![alt text](doc_imgs/test_input_four_grouped_points.png) | ![alt text](doc_imgs/test_output_four_grouped_points.png) |
+| 10 | Spiral in one area | ![alt text](doc_imgs/test_input_spiral_in_one_area.png) | ![alt text](doc_imgs/test_output_spiral_in_one_area.png) |
 
 ## Setup launching
 

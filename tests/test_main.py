@@ -47,7 +47,7 @@ class TestSortingSpirallyAlgorithm:
         points_order = sort_points_spirally(points)
         assert points == d_points
 
-    def test_case_one_small_square(self):
+    def test_case_one_simple_square(self):
         p0, p1, p2, p3 = ([-1, -1, 2], [-1, 1, 0], [1, 1, 5], [1, -1, 5])
 
         points_order = sort_points_spirally([p0, p1, p2, p3])
@@ -56,7 +56,7 @@ class TestSortingSpirallyAlgorithm:
         points_order = sort_points_spirally([p2, p1, p0, p3])
         assert points_order == [2, 1, 0, 3]
 
-    def test_case_two_curve(self):
+    def test_case_two_simple_curve(self):
         p0, p1, p2, p3, p4, p5 = (
             [-2, -1, 1], [-1, 2, 2], [2, 1, 2], [2, -2, 1], [-1, -1, 0], [0, 1, 0])
 
@@ -66,7 +66,7 @@ class TestSortingSpirallyAlgorithm:
         points_order = sort_points_spirally([p2, p1, p5, p0, p3, p4])
         assert points_order == [3, 1, 0, 4, 5, 2]
 
-    def test_case_three_big_square(self):
+    def test_case_three_curve(self):
         p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12 = ([-3, -2, 1], [-2, 3, 0], [-1, 3, 3], [3, 2, -2], [
                                                                  2, -3, 1], [0, -3, 1], [-1, -2, 1], [-2, 2, 1], [0, 2, 7], [2, 2, 1], [1, 0, 0], [0, -1, 2], [0, 0, 0])
 
@@ -88,7 +88,6 @@ class TestSortingSpirallyAlgorithm:
 
         points_order = sort_points_spirally([p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10,
                                             p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24])
-        assert len(points_order) == 25
         assert points_order == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
                                 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
 
@@ -132,7 +131,7 @@ class TestSortingSpirallyAlgorithm:
         points_order = sort_points_spirally([p2, p4, p0, p1, p3])
         assert points_order == [2, 3, 0, 4, 1]
 
-    def test_case_seven_shifted(self):
+    def test_case_seven_shifted_points(self):
         points = [[-2, -2, 1], [-1.9, -1, 1], [-1.5, 0, 1], [-1, 1, 0], [
             0, 1.2, 0], [1, 0.8, 0], [1.5, 0, 0], [1, -1, 0], [0, -0.7, 0], [0, 0, 0], [0.1, 0, 0]]
         p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10 = tuple(points)
@@ -188,7 +187,7 @@ class TestSortingSpirallyAlgorithm:
             [p10, p2, p7, p6, p0, p1, p9, p5, p4, p8, p3])
         assert points_order == [4, 5, 1, 10, 8, 7, 3, 2, 9, 6, 0]
 
-    def test_case_eight_equal_points_xy(self):
+    def test_case_eight_similar_points_xy(self):
         p0, p1, p2, p3, p4 = ([-1, -1, 0], [-1, 1, 0],
                               [-1, 1, 2], [1, 1, 0], [1, -1, 0])
         points_order = sort_points_spirally([p0, p1, p2, p3, p4])
@@ -205,7 +204,7 @@ class TestSortingSpirallyAlgorithm:
         points_order = sort_points_spirally([p0, p1, p2, p3, p4, p5])
         assert points_order == [0, 1, 2, 3, 4, 5]
 
-    def test_case_nine_groups_four(self):
+    def test_case_nine_four_grouped_points(self):
         points = [[-6, -2, 0], [-6, 0, 0], [-5, 0, 0], [-5, -2, 0],
                   [-5, 5, 0], [-5, 6, 0], [-3, 6, 0], [-3, 5, 0],
                   [3, 4, 0], [3, 5, 0], [4, 5, 0], [4, 4, 0],
@@ -218,7 +217,7 @@ class TestSortingSpirallyAlgorithm:
         assert points_order == [0, 1, 5, 6, 10, 13, 14, 19, 16, 3, 2, 4, 7, 9,
                                 11, 12, 15, 18, 17, 20, 21, 8, 27, 31, 28, 23, 22, 25, 26, 30, 29, 24]
 
-    def test_case_ten_spiral_in_one_are(self):
+    def test_case_ten_spiral_in_one_area(self):
         p0, p1, p2, p3, p4, p5, p6 = ([-5, 0, 3], [-3, 4, 3], [2, 3, 0],
                                       [3, -3, 0], [-2, 0, 0], [-2, 1, 0], [-1, 1, 0])
         points_order = sort_points_spirally([p0, p1, p2, p3, p4, p5, p6])

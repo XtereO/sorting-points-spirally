@@ -1,5 +1,6 @@
 from typing import List
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 from picking_methods import pick_next_point
 from utils import get_boundaries_indexed_points, pop_by_value
@@ -44,6 +45,10 @@ def sort_points_spirally(points: List[List[float]], showing_result=False) -> Lis
     if (showing_result):
         x_ordered = list(map(lambda i: points[i][0], res))
         y_ordered = list(map(lambda i: points[i][1], res))
+
+        #sns.scatterplot(x=x_ordered, y=y_ordered)
+
+
         plt.plot(x_ordered, y_ordered, marker='o')
         plt.show()
 
