@@ -22,9 +22,6 @@ At the start we pick pivot point that should be connected to a next point (at th
 
 After that we use the picked point as a new pivot point and repeat steps 1, 2, 3 without using connected points until unconnected points left.
 
-## Mini-usage documentation
-documentation in process...
-
 ## Covered tests
 | № | Test title | Input | Output |
 |---|----|-----|-----------|
@@ -38,6 +35,29 @@ documentation in process...
 | 8 | Similar points on flat xy | ![alt text](doc_imgs/test_input_similar_points_xy.png) | ![alt text](doc_imgs/test_output_similar_points_xy.png) |
 | 9 | Four-grouped points | ![alt text](doc_imgs/test_input_four_grouped_points.png) | ![alt text](doc_imgs/test_output_four_grouped_points.png) |
 | 10 | Spiral in one area | ![alt text](doc_imgs/test_input_spiral_in_one_area.png) | ![alt text](doc_imgs/test_output_spiral_in_one_area.png) |
+
+## Mini-usage documentation
+
+This project contains the function `sort_points_spirally` in the src/main.py. There is the description of inputs, outputs and example for this function in this section.
+
+### Inputs
+
+`points: List[List[float]]` is the first argument of the function, it should be a list of points e.g. `[[-2, -2, 1], [-1.9, -1, 1]]`.
+
+`showing_result: boolean` is the second argument of the function if it is `True` then the function will also show a result as a plot (a scattered plot of input `points` and then a plot of output as connections of ordered points). By default it is `False`.
+
+### Outputs
+
+`points_order: List[int]` is a list of indexes which show index of input `points`. For example, `[1, 0]` means that a first point is a point with index 1 of input `points` so to get this point you can access it by this index e.g. `points[1]`.
+
+### Example
+```
+points = [[-2, -2, 1], [-1.9, -1, 1], [-1.5, 0, 1], [-1, 1, 0], [ 0, 1.2, 0], [1, 0.8, 0], [1.5, 0, 0], [1, -1, 0], [0, -0.7, 0], [0, 0, 0], [0.1, 0, 0]]
+
+points_order = sort_points_spirally(points, True)
+# result is [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
+# it has True as second arg so it also will show the result as a plot
+```
 
 ## Setup launching
 
