@@ -1,12 +1,12 @@
 ## About this project
 
-This project contains module which allows to sort some points in flat XY spirally. This module is tested (there are at least 10 cases).
+This project contains the module which allows to sort some points in flat XY spirally. This module is tested (there are at least 10 cases).
 
 ![alt text](doc_imgs/algorithm_purpose.png)
 
 ## Idea of the algorithm
 
-At the start we pick pivot point that should be connected to a next point (at the start we take the most left point, in case there are two such points we take the most down one). After that algorithm consists of three major steps:
+At the start we pick a pivot point that should be connected to a next point (at the start we take the most left point, in case there are two such points we take the most down one). After that the algorithm consists of three major steps:
 
 - Step 1: shifting points at the center of cartesian system
 
@@ -20,7 +20,7 @@ At the start we pick pivot point that should be connected to a next point (at th
 
 ![alt text](doc_imgs/algorithm_step3.png)
 
-After that we use the picked point as a new pivot point and repeat steps 1, 2, 3 without using connected points until unconnected points left.
+After that we use the picked point as a new pivot point and repeat the steps 1, 2, 3 without using connected points until unconnected points left.
 
 ## Covered tests
 | № | Test title | Input | Output |
@@ -56,23 +56,23 @@ points = [[-2, -2, 1], [-1.9, -1, 1], [-1.5, 0, 1], [-1, 1, 0], [ 0, 1.2, 0], [1
 
 points_order = sort_points_spirally(points, True)
 # result is [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
-# it has True as second arg so it also will show the result as a plot
+# it has True as a second arg so it also will show the result as a plot
 ```
 
 ## Setup launching
 
-First you should define virtual environment (base module venv of python is used), in the root directory of project run these commands in your terminal to create and activate virtual environment:
+First you should define a virtual environment (basic module venv of python is used), in the root directory of the project run these commands in your terminal to create and activate the virtual environment:
 
 `python -m venv venv`
 
 `.\venv\Scripts\activate`
 
-After that run command to install required packages for this projects:
+After that run the following command to install required packages for this projects:
 
 `pip install -r req.txt`
 
-Then run `pip install -e .` in the root of project so you can setup "importing" paths between folders src and tests.
+Then run `pip install -e .` in the root of the project so you can setup the "importing" paths between the folders src and tests.
 
-To run tests you should run this command in the root of project:
+To run all tests you should run this command in the root of the project:
 
 `pytest tests`
