@@ -6,7 +6,7 @@ This project contains the module which allows to sort some points in flat XY spi
 
 ## Idea of the algorithm
 
-At the start we pick a pivot point that should be connected to a next point (at the start we take the most left point, in case there are two such points we take the most down one). After that the algorithm consists of three major steps:
+At the start we pick a pivot point that should be connected to a next point (we take the most left point along the axis x, in case there are two such points we take the lowest point along the axis y). After that the algorithm consists of three major steps:
 
 - Step 1: shifting points at the center of cartesian system
 
@@ -16,7 +16,7 @@ At the start we pick a pivot point that should be connected to a next point (at 
 
 ![alt text](doc_imgs/algorithm_step2.png)
 
-- Step 3: pick a next point with the biggest angle (atan2 is used to define angles)
+- Step 3: picking a next point with the biggest angle (atan2 is used to define angles)
 
 ![alt text](doc_imgs/algorithm_step3.png)
 
