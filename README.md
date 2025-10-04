@@ -16,10 +16,11 @@ At the start we pick pivot point that should be connected to a next point (at th
 
 ![alt text](doc_imgs/algorithm_step2.png)
 
-- Step 3: pick a next point with the biggest angle (atan2)
+- Step 3: pick a next point with the biggest angle (atan2 is used to define angles)
 
-after that 
+![alt text](doc_imgs/algorithm_step3.png)
 
+After that we use the picked point as a new pivot point and repeat steps 1, 2, 3 without using connected points until unconnected points left.
 
 ## Mini-usage documentation
 documentation in process...
