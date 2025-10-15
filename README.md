@@ -1,6 +1,6 @@
 ## About this project
 
-This project contains the module which allows to sort some points in flat XY spirally. This module is tested (there are at least 10 cases).
+This project contains the module which allows to sort some points in flat XY spirally. This module is tested (there are at least 11 cases).
 
 ![alt text](doc_imgs/algorithm_purpose.png)
 
@@ -35,6 +35,7 @@ After that we use the picked point as a new pivot point and repeat the steps 1, 
 | 8 | Similar points on flat xy | ![alt text](doc_imgs/test_input_similar_points_xy.png) | ![alt text](doc_imgs/test_output_similar_points_xy.png) |
 | 9 | Four-grouped points | ![alt text](doc_imgs/test_input_four_grouped_points.png) | ![alt text](doc_imgs/test_output_four_grouped_points.png) |
 | 10 | Spiral in one area | ![alt text](doc_imgs/test_input_spiral_in_one_area.png) | ![alt text](doc_imgs/test_output_spiral_in_one_area.png) |
+| 11 | Pivot point is the highest | ![alt text](doc_imgs/test_input_pivot_point_highest.png) | ![alt text](doc_imgs/test_output_pivot_point_highest.png) |
 
 ## Mini-usage documentation
 

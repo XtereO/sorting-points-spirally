@@ -225,3 +225,9 @@ class TestSortingSpirallyAlgorithm:
 
         points_order = sort_points_spirally([p5, p2, p4, p1, p6, p0, p3])
         assert points_order == [5, 3, 1, 6, 2, 0, 4]
+
+    def test_case_eleven_pivot_point_the_highest(self):
+        points = [[-4, 4, 1], [-3, 2, 2], [-2, 1, 0], [0, -1, 0], [1, 1, 0], [3, 2, 1],
+                  [2, 3, 0], [1, 1, 0], [0, 0, 0], [-0.6, 0.5, 2], [-1, 1, 1], [0, 0.5, 2]]
+        points_order = sort_points_spirally(points)
+        assert points_order == [0, 6, 5, 3, 2, 1, 4, 7, 8, 9, 10, 11]
