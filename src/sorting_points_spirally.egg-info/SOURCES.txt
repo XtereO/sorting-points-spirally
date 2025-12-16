@@ -1,6 +1,9 @@
+README.md
 pyproject.toml
+setup.py
 src/sorting_points_spirally.egg-info/PKG-INFO
 src/sorting_points_spirally.egg-info/SOURCES.txt
 src/sorting_points_spirally.egg-info/dependency_links.txt
 src/sorting_points_spirally.egg-info/top_level.txt
 tests/test_main.py
+tests/test_utils.py
