@@ -1,4 +1,0 @@
-doc_imgs
-src
-tests
-venv
