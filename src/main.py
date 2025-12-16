@@ -16,7 +16,8 @@ def sort_points_spirally(points: List[List[float]], showing_result=False) -> Lis
         list of indexes: Indexes of sorted points in spiral order.
     """
 
-    if (len(points) == 0):
+    number_points = len(points)
+    if (number_points == 0):
         return []
 
     indexed_points = list(enumerate(points))
@@ -41,6 +42,9 @@ def sort_points_spirally(points: List[List[float]], showing_result=False) -> Lis
         pop_by_value(indexed_points, (next_pivot_point_index,
                      points[next_pivot_point_index]))
         res.append(next_pivot_point_index)
+        print(
+            f'\rSorted points: {len(res)}/{number_points} (left {len(indexed_points)})', end='')
+    print(f'\rPoints have been sorted: {len(res)}') # these spaces are required to refresh left part of the last print 
 
     if (showing_result):
         x_ordered = list(map(lambda i: points[i][0], res))
